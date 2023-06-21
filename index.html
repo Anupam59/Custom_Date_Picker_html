@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Date Picker</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <style>
+    .datepicker {
+		top: 100%;
+		left: 0;
+		z-index: 99999;
+		display: block !important;
+		padding: 4px;
+		margin-top: 1px;
+		background-color: #fff;
+		border: 1px solid #eee;
+		border-radius: 4px;
+		
+    }
+	
+  </style>
+</head>
+<body>
+
+  <div class="container" id="datepickerContainer">
+    <h2>Custom Date Picker</h2>
+	
+    <div class="input-group date" >
+      <input type="text" class="form-control" id="datepicker" placeholder="Select a date">
+      <div class="input-group-append">
+        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+      </div>
+    </div>
+	
+  </div>
+  
+  
+  <button type="button" class="btn btn-primary btn-sm close-btn">Close</button>
+	<button type="button" class="btn btn-primary" id="resetBtn">Reset</button>
+  
+  
+  
+  
+  
+
+
+  
+  <script>
+    $(document).ready(function() {
+	  var startDate = new Date('2018-01-01');
+      var today = new Date();
+      var maxDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+      $('#datepickerContainer').datepicker({
+        format: 'mm/dd/yyyy',
+        autoclose: true,
+        todayHighlight: true,
+        endDate: maxDate,
+		startDate: startDate,
+      });
+	  
+	  
+	  
+	  // Reset button functionality
+      $('#resetBtn').on('click', function() {
+        $('#datepicker').val('');
+       
+      });
+	  
+	 
+	  
+	  
+    });
+  </script>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
